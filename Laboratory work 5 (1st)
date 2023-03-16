@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double A;
+            int I;
+            double C;
+            bool L;
+            string N ;
+
+            Console.WriteLine("Write number for variable A: ");
+            A = double.Parse(Console.ReadLine());
+            Console.WriteLine("Write nubmer for variable I: ");
+            I = int.Parse(Console.ReadLine());
+            Console.WriteLine("Write nubmer for variable C: ");
+            C = double.Parse(Console.ReadLine());
+            Console.WriteLine("Write true false for variable L: ");
+            L = bool.Parse(Console.ReadLine());
+            Console.WriteLine("Write name for variable N: ");
+            N = (Console.ReadLine());
+
+            Console.WriteLine("\tYour information\n");
+
+            Console.WriteLine($"\tA = {A}\n");
+
+            Console.WriteLine($"\tI = {I}\n");
+
+            Console.WriteLine($"\tC = {C}\n");
+
+            Console.WriteLine($"\tL = {L}\n");
+
+            Console.WriteLine($"\tN = {N}");
+
+        }
+
+    }
+
+}
