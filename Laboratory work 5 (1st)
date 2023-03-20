@@ -1,46 +1,37 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Csharp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            double A;
-            int I;
-            double C;
+            double A, I, C;
             bool L;
-            string N ;
+            string N;
 
-            Console.WriteLine("Write number for variable A: ");
-            A = double.Parse(Console.ReadLine());
-            Console.WriteLine("Write nubmer for variable I: ");
-            I = int.Parse(Console.ReadLine());
-            Console.WriteLine("Write nubmer for variable C: ");
-            C = double.Parse(Console.ReadLine());
-            Console.WriteLine("Write true false for variable L: ");
-            L = bool.Parse(Console.ReadLine());
-            Console.WriteLine("Write name for variable N: ");
-            N = (Console.ReadLine());
+            Console.WriteLine("Enter number A: ");
+            A = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter number I: ");
+            I = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter number C: ");
+            C = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter L: ");
+            L = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Enter name : ");
+            N = Console.ReadLine();
 
-            Console.WriteLine("\tYour information\n");
-
-            Console.WriteLine($"\tA = {A}\n");
-
-            Console.WriteLine($"\tI = {I}\n");
-
-            Console.WriteLine($"\tC = {C}\n");
-
-            Console.WriteLine($"\tL = {L}\n");
-
-            Console.WriteLine($"\tN = {N}");
+            Console.Write("Results: \n");
+            Console.WriteLine("A = {0,4}, C = {1,10:f5}, I = {2,20:e8}", A, C, I);
+            Console.WriteLine("Name = {0,6}, L = {1,4}", N, L);
+            Console.WriteLine(" ");
 
         }
-
     }
-
 }
