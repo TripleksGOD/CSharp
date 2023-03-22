@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            double F,x,y,z;
+            double A;
+            Console.WriteLine("Enter x: ");
+            x = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter y: ");
+            y = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter z: ");
+            z = Convert.ToDouble(Console.ReadLine());
+           
+            A = Math.Max(x, y) + Math.Sin(z);
+
+            if (A != 0)
+            {
+                F = (Math.Min(x, y + z)) / (Math.Max(x, y) + Math.Sin(z));
+                Console.WriteLine($"Function: {F}");
+            }
+            else
+            {
+                Console.WriteLine("Error : denomitator is 0");
+            }
+
+        }
+    }
