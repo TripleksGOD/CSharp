@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Security.Policy;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            double xmin = -1;//створення змінних
+            double xmax = 1.5;
+            double x = -0.6;
+            double y = 0.43;
+            string line;
+            string path = @"C:\Users\camom\OneDrive\Рабочий стол\LAB2.txt";
+            string path2 = @"C:\Users\camom\OneDrive\Рабочий стол\LAB2.RES";
+
+            using (StreamWriter write = new StreamWriter(path))//створення та відкриття файлу для запису даних
+            {
+                write.WriteLine("Results");//таблиця
+                write.WriteLine("+----------------------------------------------------------+");
+                write.WriteLine("+     Argument              +                Function      +");
+                write.WriteLine("+----------------------------------------------------------+");
+
+                for (int i = 0; i < 8; i++)//цикл для розрахунку функції
+                {
+                    x = xmin + (i * (xmax - xmin) / 7);//обчислює значення змінної на кожній ітерації
+                    y = Math.Log(3.14) * Math.Sqrt(Math.Pow(x, 3) + Math.Pow(x, 2));//функція
+                    write.WriteLine($"+ x = {x,-23:F10} + y = {y,-23:F10}+");//вивід функції
+                }
+                write.WriteLine("+----------------------------------------------------------+");
+            }
+
+            using (StreamWriter write2 = new StreamWriter(path2))//створення та відкриття файлу для запису даних
+            {
+                write2.WriteLine("Results");//таблиця
+                write2.WriteLine("+----------------------------------------------------------+");
+                write2.WriteLine("+     Argument              +                Function      +");
+                write2.WriteLine("+----------------------------------------------------------+");
+
+                for (int i = 0; i < 8; i++)//цикл для розрахунку функції
+                {
+                    x = xmin + (i * (xmax - xmin) / 7);//обчислює значення змінної на кожній ітерації
+                    y = Math.Log(3.14) * Math.Sqrt(Math.Pow(x, 3) + Math.Pow(x, 2));//функція
+                    write2.WriteLine($"+ x = {x,-23:F10} + y = {y,-23:F10}+");//вивід функції
+                }
+                write2.WriteLine("+----------------------------------------------------------+");
+                write2.WriteLine("Created by Sidyhanov Roman");
+            }
+
+            using (StreamReader read = new StreamReader(path2))//вивід результатів у консоль
+            {
+                while (!read.EndOfStream)
+                {
+                    line = read.ReadLine();
+                    Console.WriteLine(line);
+                }
+            }
+
+        }
+    }
+}
