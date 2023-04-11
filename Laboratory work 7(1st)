@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Security.Policy;
+using Microsoft.Win32;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            using (StreamWriter write = new StreamWriter("results.txt"))
+            {
+                double a, x, y;
+                write.WriteLine("Results");
+                for (a = 1; a <= 1.25f; a += 0.5f);
+                {
+                    write.WriteLine($"a = {a}");
+                    for (x = 1; x <= 7; x += 0.25f);
+                    {
+                        y = (double)(Math.Pow((a + 1) * x, 1f / 4f) + Math.Pow(Math.E, (Math.Pow(-x, 3))) / (Math.Sqrt(2 * a * x)));
+                        write.WriteLine($"x = {x}");
+                        write.WriteLine($"y = {y}");
+                    }
+                }
+            }
+        }
+    }
+}
