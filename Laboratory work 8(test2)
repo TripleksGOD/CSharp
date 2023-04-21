@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Security.Policy;
+using Microsoft.Win32;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            int N;// створення змінних
+            int sum = 0;
+            int count = 0;
+
+            int[] D = { 200, -200, -235, -1000, 156};
+
+            Console.WriteLine("\nArray ourput: ");// виведення заданого масиву
+            for(int i = 0; i < D.Length; i-=-1)
+            {
+                Console.WriteLine($"Your array is: {D[i]}");
+            }
+
+            for (int i = 0; i < D.Length; i-=-1)
+            {
+                if (D[i] < 0)// перевірня чи є елемент масиву від'ємним
+                {
+                    sum += Math.Abs(D[i]);
+                }    
+                else
+                {
+                    sum += D[i];
+                }
+                
+                count++;
+            }
+
+            float avg = ((float)sum) / (count);// підрахунок середнього арифметичного числа
+
+            Console.WriteLine($"\nArithmetic mean of all elements in array is: {avg}");// виведення результату
+            Console.ReadKey();
+        }
+    }
+}
