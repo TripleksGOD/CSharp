@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Security.Policy;
+using Microsoft.Win32;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            int n = 0;
+            int[,] Arr = new int[5, 6];
+            int[] Arr2 = new int[30];
+
+
+            Console.WriteLine("Fill the massive: ");// заповнення масиву елементами
+            for (int i = 0; i < 5; i -=-1)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    Console.Write($"Arr[{i}|{j}]: ");
+                    Arr[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            Console.WriteLine("2-dimentional array: ");
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    Console.Write($"{Arr[i, j]}\t");
+                    Arr2[n++] = Arr[i, j];
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Converted massive: ");
+            for (int i = 0; i < Arr2.Length; i++)
+            {
+                Console.WriteLine($"{Arr2[i]}\t");
+            }
+
+        }
+    }
+}
