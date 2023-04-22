@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Security.Policy;
+using Microsoft.Win32;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            int n = 0;
+            int[,] Arr = new int[5, 6] { {1, 2, 3, 4, 5, 6},
+                                         {7, 8, 9, 10, 11, 12},
+                                         {13, 14, 15, 16, 17, 18},
+                                         {19, 20, 21, 22, 23, 24},
+                                         {25, 26, 27, 28, 29, 30} 
+            };
+
+            int[] Arr2 = new int[30];
+
+
+            Console.WriteLine("2-dimentional array: ");
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    Console.Write($"{Arr[i, j]}\t");
+                    Arr2[n++] = Arr[i, j];
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Converted massive: ");
+            for (int i = 0; i < Arr2.Length; i++)
+            {
+                Console.WriteLine($"{Arr2[i]}\t");
+            }
+            Console.ReadKey();
+        }
+    }
+}
