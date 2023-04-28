@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Security.Policy;
+using Microsoft.Win32;
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.Remoting.Services;
+
+namespace Csharp
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            double S, A, n, x, y;
+            Console.WriteLine("Intermediate results" + '\n');
+            S = 0;
+            A = Math.Pow(Math.E, -2);
+            x = 9;
+            n = 0;
+
+            while (Math.Abs(A) > Math.Pow(10, (-6)))
+            {
+                S += A;
+                n++;
+                A *= (x + 2) / n;
+                Console.WriteLine("Iteration N" + n + '\n' + "A = " + A + "S = " + S + 'n');
+            }
+
+            y = Math.Exp(x);
+
+            Console.WriteLine($"When x = {x}");
+            Console.WriteLine($"Sum of the row S(x) = {S}");
+            Console.WriteLine($"y(x) = {y}");
+        }
+    }
+}
