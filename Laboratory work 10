@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace Csharp
 {
-    class stack
+    class stack//створення класу
     {
         public void OutPut()//функція виведення
         {
@@ -82,21 +82,21 @@ namespace Csharp
     {
         static void Main()
         {
-            stack Object = new stack(6);
-            Object.AddNewElement(250);
+            stack Object = new stack(6);//створення нового стеку з 6 елементами
+            Object.AddNewElement(250);//додавання елементів
             Object.AddNewElement(130);
             Object.AddNewElement(5);
             Object.AddNewElement(23);
             Object.AddNewElement(76);
             Object.AddNewElement(123);
 
-            Object.OutPut();
-            Console.WriteLine($"Sum of the elements: {Object.SumOfTheElements()}");
+            Object.OutPut();//виведення елементів у стеку
+            Console.WriteLine($"Sum of the elements: {Object.SumOfTheElements()}");//виведення суми елементів у стеку
 
-            Object.DeleteElement();
+            Object.DeleteElement();//видалення елементу у стеку
 
-            Object.OutPut();
-            Console.WriteLine($"Sum of the elements: {Object.SumOfTheElements()}");
+            Object.OutPut();//виведення нових елементыв у стеку
+            Console.WriteLine($"Sum of the elements: {Object.SumOfTheElements()}");//сума нових елементів у стеку
 
         }
     }
