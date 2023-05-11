@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using System.Collections;
+
+namespace Csharp
+{
+    class stack
+    {
+        public void OutPut()//функція виведення
+        {
+            if (first == -1)//перевірак чи є елементи у стеку
+            {
+                Console.WriteLine("Error");//якщо нема, то помилка
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Elements of the stack:");//якщо є, виводяться елементи
+                for (int i = first; i >= 0; i--)
+                {
+                    Console.WriteLine(Massive[i]);
+                }
+            }
+        }
+
+        private int first;//індекс першого елементу в стеку
+        private int[] Massive;//масив елеменів в стеку
+
+        public stack(int s)//класс
+        {
+            first = -1;//ініціалізація змінної -1, так як стек початково пустий
+            Massive = new int[s];//створення масиву
+        }
+
+        public void AddNewElement(int element)//функція додавання елементу в стек
+        {
+            if (first == Massive.Length - 1)//перевірка чи є елементи у стеку
+            {
+                Console.WriteLine("Error");//якщо нема, то помилка
+                return;
+            }
+            else//якщо є, то виконується інкремент індексу першого елементу та заноситься до масиву  
+            {
+                first++;
+                Massive[first] = element;
+            }
+        }
+
+        public int DeleteElement()//Функція видалення елементів зі стеку
+        {
+            if (first == -1)//перевірка чи є елементи у стеку
+            {
+                Console.WriteLine("Error");//якщо нема, то помилка
+                return -1;
+            }
+            else//якщо э, то виконується дикремент індексу першого елементу та видаляється зі стеку
+            {
+                int element = Massive[first];
+                first--;
+                return element;
+            }
+        }
+        
+        public int SumOfTheElements()//функція суми елементів у стеку
+        {
+            int sum = 0;
+            for (int i = 0; i <= first; i++)//цикл для додавання всіх значень елементів стеку
+            {
+                sum += Massive[i];
+            }
+            return sum;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main()
+        {
+            stack Object = new stack(6);
+            Object.AddNewElement(250);
+            Object.AddNewElement(130);
+            Object.AddNewElement(і5);
+            Object.AddNewElement(23);
+            Object.AddNewElement(76);
+
+            Object.OutPut();
+            Console.WriteLine($"Sum of the elements: {Object.SumOfTheElements()}");
+
+            Object.DeleteElement();
+            Object.DeleteElement();
+
+            Object.OutPut();
+            Console.WriteLine($"Sum of the elements: {Object.SumOfTheElements()}");
+
+        }
+    }
+
+}
