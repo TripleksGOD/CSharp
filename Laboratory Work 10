@@ -85,7 +85,7 @@ namespace Csharp
             stack Object = new stack(6);
             Object.AddNewElement(250);
             Object.AddNewElement(130);
-            Object.AddNewElement(і5);
+            Object.AddNewElement(5);
             Object.AddNewElement(23);
             Object.AddNewElement(76);
 
