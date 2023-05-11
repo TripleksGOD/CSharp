@@ -88,11 +88,11 @@ namespace Csharp
             Object.AddNewElement(5);
             Object.AddNewElement(23);
             Object.AddNewElement(76);
+            Object.AddNewElement(123);
 
             Object.OutPut();
             Console.WriteLine($"Sum of the elements: {Object.SumOfTheElements()}");
 
-            Object.DeleteElement();
             Object.DeleteElement();
 
             Object.OutPut();
@@ -100,5 +100,4 @@ namespace Csharp
 
         }
     }
-
 }
