@@ -82,7 +82,7 @@ namespace Csharp
     {
         static void Main()
         {
-            stack Object = new stack(6);//створення нового стеку з 6 елементами
+            stack Object = new stack(6);//створення об'єкту з 6 елементами
             Object.AddNewElement(250);//додавання елементів
             Object.AddNewElement(130);
             Object.AddNewElement(5);
