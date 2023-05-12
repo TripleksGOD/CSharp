@@ -10,29 +10,11 @@ using System.Collections;
 
 namespace Csharp
 {
-    class stack//створення класу
+    class stack
     {
-        public void OutPut()//функція виведення
-        {
-            if (first == -1)//перевірак чи є елементи у стеку
-            {
-                Console.WriteLine("Error");//якщо нема, то помилка
-                return;
-            }
-            else
-            {
-                Console.WriteLine("Elements of the stack:");//якщо є, виводяться елементи
-                for (int i = first; i >= 0; i--)
-                {
-                    Console.WriteLine(Massive[i]);
-                }
-            }
-        }
-
         private int first;//індекс першого елементу в стеку
         private int[] Massive;//масив елеменів в стеку
-
-        public stack(int s)//класс
+        public stack(int s)//конструктор
         {
             first = -1;//ініціалізація змінної -1, так як стек початково пустий
             Massive = new int[s];//створення масиву
@@ -76,13 +58,29 @@ namespace Csharp
             }
             return sum;
         }
+        public void OutPut()//функція виведення
+        {
+            if (first == -1)//перевірак чи є елементи у стеку
+            {
+                Console.WriteLine("Error");//якщо нема, то помилка
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Elements of the stack:");//якщо є, виводяться елементи
+                for (int i = first; i >= 0; i--)
+                {
+                    Console.WriteLine(Massive[i]);
+                }
+            }
+        }
     }
 
     internal class Program
     {
         static void Main()
         {
-            stack Object = new stack(6);//створення об'єкту з 6 елементами
+            stack Object = new stack(6);//створення нового стеку з 6 елементами
             Object.AddNewElement(250);//додавання елементів
             Object.AddNewElement(130);
             Object.AddNewElement(5);
